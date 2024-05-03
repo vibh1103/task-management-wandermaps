@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "a359bb29-25db-4f94-b37d-bf82d195ae3a",
+		"name": "Task Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25399404"
+	},
+	"item": [
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "60af781a-941b-4515-93b4-206dda4d920e"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Sample Task 5\",\n    \"description\": \"This is a sample task 5\",\n    \"priority\": \"URGENT\"\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Task",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "b1ab43a5-847a-4d93-ac2a-2d2379d05c9d"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "pending",
+							"disabled": true
+						},
+						{
+							"key": "priority",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "88ee720b-b523-4de1-b08d-58b1eebeb9ad"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"completed\"\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "e3d3436e-f232-4623-98ab-1c4b5501591a",
+							"uuid": "e27558b4-37c8-4a30-8b48-66656df08a2b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"uuid": "3c65297f-3824-47b3-a516-1bd6ee6f506c"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/tasks/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "c036d055-cb69-469a-b5fc-52a3a2e60dfd",
+							"uuid": "cdade500-ed62-4bf5-915c-265bafd79b92"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
